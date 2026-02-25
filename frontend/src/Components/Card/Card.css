@@ -1,0 +1,101 @@
+/* الحاوية الأساسية للكارد */
+.card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 1rem 0;
+
+  background: #111827;          /* خلفية داكنة */
+  color: #f9fafb;               /* نص فاتح */
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.5);
+  background: #020617;
+}
+
+/* صورة الفيلم */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  background: #1f2937; /* لون احتياطي لو ما في صورة */
+}
+
+/* جزء التفاصيل (العنوان، الريت، التاريخ) */
+.card .details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* العنوان + التقييم */
+.card h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* التقييم بجانب العنوان */
+.card h2 span {
+  font-size: 0.85rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: #facc15;
+  color: #1f2937;
+  font-weight: 700;
+}
+
+/* تاريخ الإصدار */
+.card h4 {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* نص الوصف */
+.card .info {
+  grid-column: 1 / -1;          /* يمتد عرض الكارد كامل */
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #e5e7eb;
+
+  max-height: 4.5rem;           /* سطرين تقريباً */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* زر إضافة إلى الـ Watchlist لو عندك كومبوننت زر داخله */
+.card .add-to-watchlist {
+  margin-top: 0.5rem;
+}
+
+/* استجابة للموبايل */
+@media (max-width: 600px) {
+  .card {
+    grid-template-columns: 90px 1fr;
+    padding: 0.75rem;
+  }
+
+  .card img {
+    height: 140px;
+  }
+
+  .card .info {
+    max-height: 3.6rem;
+    font-size: 0.85rem;
+  }
+}
