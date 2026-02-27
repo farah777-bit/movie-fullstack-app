@@ -2,7 +2,7 @@
 
 A modern full-stack web application for browsing movies, managing personal watchlists, and viewing detailed movie information.
 
-🔗 GitHub Repository: https://github.com/USERNAME/movie-fullstack-app
+🔗 GitHub Repository: https://github.com/farah777-bit/movie-fullstack-app
 
 ---
 
