@@ -11,7 +11,6 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-console.log(searchMovies("kill"));
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />

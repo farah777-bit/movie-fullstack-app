@@ -78,7 +78,7 @@ namespace api.Controllers
             var commentModel = commentDto.ToCommentFromCreate(movie.Id);
             commentModel.UserId = appUser!.Id;
             await _commentRepo.CreateCommentAsync(commentModel);
-            return CreatedAtAction(nameof(GetCommentByMovieId), new { id = commentModel.Id }, commentModel.ToCommentDto());
+            return CreatedAtAction(nameof(GetCommentByMovieId), new { movieId = movie.Id }, commentModel.ToCommentDto());
         }
 
         [Authorize]

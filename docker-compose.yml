@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql-server
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong!Pass123
+    ports:
+      - "1433:1433"
+    networks:
+      - app-network
+
+  api:
+    container_name: api-container
+    build:
+      context: ./api
+    depends_on:
+      - db
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=db;Database=TMDB;User Id=sa;Password=YourStrong!Pass123;TrustServerCertificate=True
+    ports:
+      - "5000:8080"
+    networks:
+      - app-network
+
+  frontend:
+    container_name: frontend-container
+    build:
+      context: ./frontend
+    depends_on:
+      - api
+    ports:
+      - "3000:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:

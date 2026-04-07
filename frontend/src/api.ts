@@ -5,7 +5,9 @@ import { handelError } from "./Helper/ErrorHandler";
 import { error } from "console";
 
 
-const API_BASE = "http://localhost:5258"
+// const API_BASE = "http://localhost:5258"
+const API_BASE = "http://localhost:5000"
+
 export const api = axios.create({ baseURL: API_BASE });
 
 api.interceptors.request.use(

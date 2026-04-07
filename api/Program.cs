@@ -116,18 +116,21 @@ var app = builder.Build();
 
 app.UseCors("Frontend");
 
-if (app.Environment.IsDevelopment())
-{
-  app.UseSwagger();
-  app.UseSwaggerUI();
-}
+// if (app.Environment.IsDevelopment())
+// {
+  // app.UseSwagger();
+  // app.UseSwaggerUI();
+// }
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+// if (app.Environment.IsDevelopment())
+// {
 
-}
+// }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
+
+app.UseSwagger();
+  app.UseSwaggerUI();
 
 app.UseAuthentication();
 app.UseAuthorization();
