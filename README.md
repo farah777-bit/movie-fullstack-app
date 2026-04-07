@@ -98,7 +98,31 @@ This project was built as part of my full-stack development portfolio,
 focusing on building scalable web applications using ASP.NET Core and React.
 
 ---
+## 🐳 Run with Docker
 
+### Requirements
+- Docker
+- Docker Compose
+
+### Run the application
+
+docker-compose up --build
+
+### Access the app
+
+Frontend: http://localhost:3000  
+Backend (Swagger): http://localhost:5000/swagger
+
+---
+
+## 🧠 Architecture
+
+- Multi-container Docker setup
+- Frontend served with Nginx
+- Backend API with ASP.NET Core
+- SQL Server container for database
+- Docker network for service communication
+---
 ## 👩‍💻 Author
 
 Farah Soliman  
